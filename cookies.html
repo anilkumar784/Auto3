@@ -7,7 +7,7 @@
     body {
       font-family: Arial, sans-serif;
       padding: 2em;
-      background: #f4f4f4;
+      background-color: #f4f4f4;
       color: #333;
     }
 
@@ -23,14 +23,17 @@
     #cookieDialog {
       position: fixed;
       bottom: 20px;
-      left: 20px;
-      right: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       background: #fff;
-      padding: 1em 1.5em;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border: 1px solid #ccc;
       border-radius: 10px;
-      display: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      padding: 1em 1.5em;
+      width: 90%;
+      max-width: 500px;
       z-index: 1000;
+      display: none;
     }
 
     #cookieDialog p {
@@ -38,10 +41,10 @@
     }
 
     #cookieDialog button {
-      padding: 0.5em 1em;
+      padding: 0.5em 1.2em;
+      margin-right: 10px;
       border: none;
       border-radius: 5px;
-      margin-right: 0.5em;
       font-weight: bold;
       cursor: pointer;
     }
@@ -60,20 +63,14 @@
 <body>
 
   <h1>Cookies Policy</h1>
-  <p>
-    At Garagereadyparts, we use cookies to improve your experience and help us understand how visitors interact with our website. Cookies are small text files stored on your device that help us recognize returning users, remember preferences, and deliver content more relevant to your interests. Some cookies are essential for basic site functionality, such as keeping your shopping cart active or enabling secure checkout.
-  </p>
-  <p>
-    We may also use third-party cookies from trusted partners for analytics, marketing, and advertising purposes. These help us track user behavior, measure campaign effectiveness, and provide personalized ads across the web. You can choose to accept or decline non-essential cookies. Disabling cookies may limit your ability to use certain features on our site.
-  </p>
-  <p>
-    You can change your cookie preferences at any time through your browser settings or by returning to this page. For more information, contact our support team.
-  </p>
+  <p>Garagereadyparts uses cookies to improve your browsing experience and help us better understand how visitors interact with our website. These small text files are stored on your device and may collect information such as browser type, preferences, and browsing behavior.</p>
+  <p>We use essential cookies for website functionality, as well as optional cookies for analytics and marketing. You have the right to choose whether or not to accept these cookies. You can manage your preferences at any time through your browser settings or by revisiting this page.</p>
+  <p>Refusing cookies may limit some functionality of our website, but you will still be able to browse our main content. For further details on how we use cookies and protect your data, please review our full Privacy Policy or contact us directly.</p>
   <p><a href="index.html">← Back to Home</a></p>
 
   <!-- Cookie Consent Dialog -->
   <div id="cookieDialog">
-    <p>This site uses cookies to enhance your experience. Do you accept our use of cookies?</p>
+    <p>This site uses cookies to improve your experience. Do you accept our use of cookies?</p>
     <button id="acceptCookies">Accept</button>
     <button id="declineCookies">Decline</button>
   </div>
@@ -87,18 +84,19 @@
         dialog.style.display = "block";
       }
 
-      document.getElementById("acceptCookies").addEventListener("click", () => {
+      document.getElementById("acceptCookies").addEventListener("click", function () {
         localStorage.setItem("cookieConsent", "accepted");
         dialog.style.display = "none";
         alert("You accepted cookies.");
       });
 
-      document.getElementById("declineCookies").addEventListener("click", () => {
+      document.getElementById("declineCookies").addEventListener("click", function () {
         localStorage.setItem("cookieConsent", "declined");
         dialog.style.display = "none";
         alert("You declined cookies.");
       });
     });
   </script>
+
 </body>
 </html>
