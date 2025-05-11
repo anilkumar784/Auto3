@@ -5,118 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Garagereadyparts</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background: #222;
-      color: #fff;
-      padding: 1em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 1.5em;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1em;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 4em 1em;
-      background: #007bff;
-      color: white;
-    }
-
-    .hero h2 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1em;
-      padding: 0.7em 1.5em;
-      background: #fff;
-      color: #007bff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .parts-section, .categories-section, .contact-section {
-      padding: 2em 1em;
-      background: white;
-      margin-top: 1em;
-    }
-
-    .parts-grid {
-      display: flex;
-      gap: 1em;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 1em;
-    }
-
-    .part-card {
-      background: #f8f8f8;
-      padding: 1em;
-      border-radius: 10px;
-      width: 200px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .part-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-
-    .category-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1em;
-      list-style: none;
-      margin-top: 1em;
-      justify-content: center;
-    }
-
-    .category-list li {
-      background: #007bff;
-      color: white;
-      padding: 0.5em 1em;
-      border-radius: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1em;
-      background: #222;
-      color: white;
-      margin-top: 2em;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: #f4f4f4; color: #333; }
+    header { background: #222; color: #fff; padding: 1em; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { font-size: 1.5em; }
+    nav ul { list-style: none; display: flex; gap: 1em; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    .hero { text-align: center; padding: 4em 1em; background: #007bff; color: white; }
+    .hero h2 { font-size: 2em; margin-bottom: 0.5em; }
+    .btn { display: inline-block; margin-top: 1em; padding: 0.7em 1.5em; background: #fff; color: #007bff; text-decoration: none; border-radius: 5px; }
+    .parts-section, .categories-section, .contact-section { padding: 2em 1em; background: white; margin-top: 1em; }
+    .parts-grid { display: flex; gap: 1em; flex-wrap: wrap; justify-content: center; margin-top: 1em; }
+    .part-card { background: #f8f8f8; padding: 1em; border-radius: 10px; width: 200px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .part-card img { width: 100%; height: auto; border-radius: 5px; }
+    .category-list { display: flex; flex-wrap: wrap; gap: 1em; list-style: none; margin-top: 1em; justify-content: center; }
+    .category-list li { background: #007bff; color: white; padding: 0.5em 1em; border-radius: 20px; }
+    footer { text-align: center; padding: 1em; background: #222; color: white; margin-top: 2em; }
+    footer a { color: #fff; margin: 0 1em; text-decoration: underline; font-size: 0.9em; }
   </style>
 </head>
 <body>
@@ -126,7 +31,7 @@
       <ul>
         <li><a href="#parts">Parts</a></li>
         <li><a href="#categories">Categories</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
@@ -170,13 +75,20 @@
   </section>
 
   <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <p>Email: support@garagereadyparts.com</p>
-    <p>Phone: +1 888-597-1890</p>
+    <h2>Contact Info</h2>
+    <p>Email: support@Garagereadyparts.com</p>
+    <p>Phone: +1 888-597-8122</p>
+    <p><a href="contact.html">Go to Contact Page →</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 Garagereadyparts. All rights reserved.</p>
+    <p>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="cookies.html">Cookies</a> |
+      <a href="contact.html">Contact Us</a>
+    </p>
   </footer>
 </body>
 </html>
