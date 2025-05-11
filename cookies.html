@@ -1,63 +1,99 @@
-<section id="categories" class="categories-section">
- <body>
-  <button id="showCookieDialog"></button>
-   <div id="cookieDialog" style="display: none;">
-  <p>This site uses cookies to improve your experience. Do you accept the use of cookies?</p>
-  <button id="acceptCookies">Accept</button>
-  <button id="declineCookies">Decline</button>
-</div>
-<script>
-  document.getElementById("showCookieDialog").addEventListener("click", function () {
-    document.getElementById("cookieDialog").style.display = "block";
-  });
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cookies Policy - Garagereadyparts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2em;
+      background: #f4f4f4;
+      color: #333;
+    }
 
-  document.getElementById("acceptCookies").addEventListener("click", function () {
-    localStorage.setItem("cookieConsent", "accepted");
-    document.getElementById("cookieDialog").style.display = "none";
-    alert("You accepted cookies.");
-  });
+    h1 {
+      color: #007bff;
+    }
 
-  document.getElementById("declineCookies").addEventListener("click", function () {
-    localStorage.setItem("cookieConsent", "declined");
-    document.getElementById("cookieDialog").style.display = "none";
-    alert("You declined cookies.");
-  });
-</script>
- </body>
-  <h2>Auto Parts Categories</h2>
-  <p>Explore our wide range of auto parts to keep your vehicle running at peak performance.</p>
-  <div class="parts-grid">
-    <div class="part-card">
-      <h3>Engine Components</h3>
-      <p>Spark plugs, timing belts, gaskets, and more for a smooth and efficient engine.</p>
-    </div>
-    <div class="part-card">
-      <h3>Brakes & Rotors</h3>
-      <p>High-performance brake pads, discs, and calipers for safe driving.</p>
-    </div>
-    <div class="part-card">
-      <h3>Suspension & Steering</h3>
-      <p>Shocks, struts, and control arms for better handling and comfort.</p>
-    </div>
-    <div class="part-card">
-      <h3>Lighting</h3>
-      <p>Headlights, tail lights, fog lamps, and LED upgrades to enhance visibility.</p>
-    </div>
-    <div class="part-card">
-      <h3>Interior Accessories</h3>
-      <p>Floor mats, seat covers, and gadgets to upgrade your driving experience.</p>
-    </div>
-    <div class="part-card">
-      <h3>Filters & Fluids</h3>
-      <p>Oil filters, air filters, and quality fluids to maintain your vehicle’s health.</p>
-    </div>
-    <div class="part-card">
-      <h3>Exhaust & Emissions</h3>
-      <p>Mufflers, catalytic converters, and exhaust pipes for cleaner performance.</p>
-    </div>
-    <div class="part-card">
-      <h3>Battery & Electrical</h3>
-      <p>Batteries, alternators, and wiring components to power your ride.</p>
-    </div>
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    /* Cookie Dialog Styles */
+    #cookieDialog {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: white;
+      padding: 1em 1.5em;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      display: none;
+      z-index: 1000;
+    }
+
+    #cookieDialog p {
+      margin-bottom: 1em;
+    }
+
+    #cookieDialog button {
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 5px;
+      margin-right: 0.5em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #acceptCookies {
+      background-color: #28a745;
+      color: white;
+    }
+
+    #declineCookies {
+      background-color: #dc3545;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cookies Policy</h1>
+  <p>We use cookies to enhance your experience on our site.</p>
+  <p>Cookies help us understand user behavior and improve our services.</p>
+  <p>You can disable cookies in your browser settings at any time.</p>
+  <p><a href="index.html">← Back to Home</a></p>
+
+  <!-- Cookie Consent Dialog -->
+  <div id="cookieDialog">
+    <p>This site uses cookies to offer you a better browsing experience. Do you accept our use of cookies?</p>
+    <button id="acceptCookies">Accept</button>
+    <button id="declineCookies">Decline</button>
   </div>
-</section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dialog = document.getElementById("cookieDialog");
+      const consent = localStorage.getItem("cookieConsent");
+
+      // Show dialog only if not yet accepted/declined
+      if (!consent) {
+        dialog.style.display = "block";
+      }
+
+      document.getElementById("acceptCookies").onclick = () => {
+        localStorage.setItem("cookieConsent", "accepted");
+        dialog.style.display = "none";
+        alert("You accepted cookies.");
+      };
+
+      document.getElementById("declineCookies").onclick = () => {
+        localStorage.setItem("cookieConsent", "declined");
+        dialog.style.display = "none";
+        alert("You declined cookies.");
+      };
+    });
+  </script>
+</body>
+</html>
