@@ -1,4 +1,29 @@
 <section id="categories" class="categories-section">
+ <body>
+  <button id="showCookieDialog">Manage Cookie Preferences</button>
+   <div id="cookieDialog" style="display: none;">
+  <p>This site uses cookies to improve your experience. Do you accept the use of cookies?</p>
+  <button id="acceptCookies">Accept</button>
+  <button id="declineCookies">Decline</button>
+</div>
+<script>
+  document.getElementById("showCookieDialog").addEventListener("click", function () {
+    document.getElementById("cookieDialog").style.display = "block";
+  });
+
+  document.getElementById("acceptCookies").addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "accepted");
+    document.getElementById("cookieDialog").style.display = "none";
+    alert("You accepted cookies.");
+  });
+
+  document.getElementById("declineCookies").addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "declined");
+    document.getElementById("cookieDialog").style.display = "none";
+    alert("You declined cookies.");
+  });
+</script>
+ </body>
   <h2>Auto Parts Categories</h2>
   <p>Explore our wide range of auto parts to keep your vehicle running at peak performance.</p>
   <div class="parts-grid">
